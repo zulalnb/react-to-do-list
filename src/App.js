@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
-const initualToDos = [
+const initialToDos = [
   { id: 1, task: "Learn JavaScript", completed: true },
   { id: 2, task: "Learn React", completed: false },
   { id: 3, task: "Have a life", completed: false }
@@ -12,7 +12,7 @@ const initualToDos = [
 
 function App() {
   //köklü değişim
-  const [todoList, setTodoList] = useState(initualToDos);
+  const [todoList, setTodoList] = useState(initialToDos);
 
   //filtreleme
   const [visibleTodos, setVisibleTodos] = useState(todoList);
