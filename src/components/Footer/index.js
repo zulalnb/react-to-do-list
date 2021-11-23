@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-function Footer({ todoList, setTodoList, visibleTodos, setVisibleTodos }) {
+function Footer({
+  todoList,
+  setTodoList,
+  visibleTodos,
+  setVisibleTodos,
+  anyCompleted
+}) {
   const [showTodos, setShowTodos] = useState("all");
 
   const clear = () => {
@@ -65,7 +71,7 @@ function Footer({ todoList, setTodoList, visibleTodos, setVisibleTodos }) {
         </li>
       </ul>
 
-      {todoList.some((item) => item.completed) && (
+      {anyCompleted && (
         <button className="clear-completed" onClick={clear}>
           Clear completed
         </button>

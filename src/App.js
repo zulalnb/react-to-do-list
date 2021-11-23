@@ -11,11 +11,11 @@ const initialToDos = [
 ];
 
 function App() {
-  //köklü değişim
   const [todoList, setTodoList] = useState(initialToDos);
 
-  //filtreleme
   const [visibleTodos, setVisibleTodos] = useState(todoList);
+
+  const anyCompleted = todoList.some((item) => item.completed);
 
   return (
     <section className="todoapp">
@@ -24,12 +24,14 @@ function App() {
         todoList={todoList}
         setTodoList={setTodoList}
         visibleTodos={visibleTodos}
+        anyCompleted={anyCompleted}
       />
       <Footer
         todoList={todoList}
         setTodoList={setTodoList}
         visibleTodos={visibleTodos}
         setVisibleTodos={setVisibleTodos}
+        anyCompleted={anyCompleted}
       />
     </section>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
-function Main({ todoList, setTodoList, visibleTodos }) {
-  const anyCompleted = todoList.some((item) => item.completed);
+function Main({ todoList, setTodoList, visibleTodos, anyCompleted }) {
+  const isAllCompleted = todoList.every((item) => item.completed);
 
   const checkTodo = todoList.map((todo) => {
     return { ...todo, completed: true };
@@ -29,11 +29,7 @@ function Main({ todoList, setTodoList, visibleTodos }) {
 
   return (
     <section className="main">
-      <input
-        className="toggle-all"
-        type="checkbox"
-        checked={todoList.every((item) => item.completed)}
-      />
+      <input className="toggle-all" type="checkbox" checked={isAllCompleted} />
       {todoList?.length ? (
         <label htmlFor="toggle-all" onClick={handleMarkAll}>
           Mark all as complete
